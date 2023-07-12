@@ -16,25 +16,18 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-        List<String> someListString = new ArrayList<>();
-
-        StringComparator stringComparator = new StringComparator();
+        StringBuilder stringBuilder = new StringBuilder();
 
         while (true) {
             String someWord = scanner.next();
-            if (stringComparator.compare(someWord, "end") == 0) {
+            if (someWord.equals("end")) {
                 break;
             } else {
-                someListString.add(someWord);
+                stringBuilder.append(someWord).append("\n");
             }
-
         }
 
-        for (int i = 0; i < someListString.size(); i++) {
-            System.out.println(someListString.get(i));
-        }
-
+        System.out.println(stringBuilder.toString());
 
     }
 
